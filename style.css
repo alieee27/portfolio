@@ -55,14 +55,34 @@ header p {
   color: #cbd5e1;
 }
 
-.profile-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  margin-top: 1rem;
-  object-fit: cover;
-  border: 4px solid white;
+.header {
+  text-align: center;
+  padding: 40px 20px;
 }
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 2px solid #0099ff;
+}
+
+.role {
+  font-size: 18px;
+  color: #47b5ff;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.desc {
+  font-size: 14px;
+  color: #f2f2f2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 
 section {
   padding: 3rem 1rem;
@@ -82,19 +102,71 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.skills ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.skills-section {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.skills li {
-  background: #0f172a;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+.skills-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+.skill-item:hover {
+  background-color: #f0f8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.skill-item i,
+.skill-item img {
+  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  color: #007acc;
+}
+
+.skill-item img {
+  object-fit: contain;
+}
+
+.skill-item span {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    max-width: 100%;
+  }
+
+  .skill-item {
+    flex: 1 1 40%;
+    justify-content: center;
+  }
+}
+
 
 .projects .card {
   background: white;
@@ -351,7 +423,7 @@ footer {
 .project-links a {
   text-decoration: none;
   color: white;
-  background-color: #302e2d;
+  background-color: #5c5655;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 0.9em;
@@ -361,4 +433,9 @@ footer {
 .project-links a:hover {
   background-color: #e64a19;
   transform: scale(1.05);
+}
+
+.skills-section h2 {
+  position: relative;
+  top: -25px; /* Naikkan 10px ke atas */
 }

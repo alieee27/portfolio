@@ -8,6 +8,12 @@
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- ✅ Font Awesome CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
   </head>
   <body>
     <div class="top-banner" id="topBanner">
@@ -25,12 +31,12 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Header -->
-    <header data-aos="fade-up">
-      <h1>Achmad Gozali</h1>
-      <p>Mobile Developer & Web Developer</p>
+    <header data-aos="fade-up" class="header">
       <img src="profile.png" alt="Achmad Gozali" class="profile-img" />
-    </header>
+        <h1>Achmad Gozali</h1>
+        <p class="role">Mobile Developer & Web Developer</p>
+        <p class="desc">Building clean, responsive apps with Flutter & modern web technologies.</p>
+      </header>
 
     <!-- Stats -->
     <section class="stats-pro">
@@ -83,53 +89,88 @@
 
     <!-- Skills -->
     <section id="skills" class="skills" data-aos="fade-right">
-      <h2>Skills</h2>
-      <ul>
-        <li>Flutter</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Dart</li>
-        <li>Firebase</li>
-        <li>Git</li>
-      </ul>
-    </section>
+  <section id="skills" class="skills-section">
+    <h2>My Skills</h2>
 
-    <!-- Projects -->
-<section id="projects" class="projects">
-  <h2 data-aos="fade-up">Projects</h2>
-
-  <!-- Tombol Filter -->
-  <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
-    <button data-filter="all">Semua</button>
-    <button data-filter="flutter">App Mobile</button>
-    <button data-filter="web">Web</button>
-  </div>
-
-  <!-- Daftar Project -->
-  <div class="project-grid">
-    <div class="card flutter" data-aos="zoom-in">
-      <img src="app mobile.jpg" alt="Project 1" />
-      <h3>App My Profile</h3>
-      <p>A Flutter-based personal profile app.</p>
-      <div class="project-links">
-        <a href="https://alieee27.github.io/myprofile/" target="_blank">🔗 GitHub</a>
-        <a href="https://github.com/alieee27/myprofile" target="_blank">📂 Source Code</a>
-      </div>
+      <div class="skills-grid">
+      <div class="skill-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg" alt="Go" />
+      <span>Go</span>
     </div>
-
-    <div class="card web" data-aos="zoom-in" data-aos-delay="100">
-      <img src="web kenangan.jpg" alt="Project 2" />
-      <h3>Web Kenangan</h3>
-      <p>Simple, colorful website for storing photo memories.</p>
-      <div class="project-links">
-        <a href="https://alieee27.github.io/kenangan-albi/" target="_blank">🔗 GitHub</a>
-        <a href="https://github.com/alieee27/kenangan-albi" target="_blank">📂 Source Code</a>
-      </div>
+    <div class="skill-item">
+      <i class="fab fa-html5"></i>
+      <span>HTML</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-css3-alt"></i>
+      <span>CSS</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-js-square"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Dart_programming_language_logo.svg" alt="Dart" />
+      <span>Dart</span>
+    </div>
+    <div class="skill-item">
+      <i class="fas fa-fire"></i>
+      <span>Firebase</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-python"></i>
+      <span>Python</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-git-alt"></i>
+      <span>Git</span>
     </div>
   </div>
 </section>
 
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <h2 data-aos="fade-up">Projects</h2>
+
+      <!-- Tombol Filter -->
+      <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
+        <button data-filter="all">Semua</button>
+        <button data-filter="flutter">App Mobile</button>
+        <button data-filter="web">Web</button>
+      </div>
+
+      <!-- Daftar Project -->
+      <div class="project-grid">
+        <div class="card flutter" data-aos="zoom-in">
+          <img src="app mobile.jpg" alt="Project 1" />
+          <h3>App My Profile</h3>
+          <p>A Flutter-based personal profile app.</p>
+          <div class="project-links">
+            <a href="https://alieee27.github.io/myprofile/" target="_blank"
+              >🔗 GitHub</a
+            >
+            <a href="https://github.com/alieee27/myprofile" target="_blank"
+              >📂 Source Code</a
+            >
+          </div>
+        </div>
+
+        <div class="card web" data-aos="zoom-in" data-aos-delay="100">
+          <img src="web kenangan.jpg" alt="Project 2" />
+          <h3>Web Kenangan</h3>
+          <p>Simple, colorful website for storing photo memories.</p>
+          <div class="project-links">
+            <a href="https://alieee27.github.io/kenangan-albi/" target="_blank"
+              >🔗 GitHub</a
+            >
+            <a href="https://github.com/alieee27/kenangan-albi" target="_blank"
+              >📂 Source Code</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Timeline -->
     <section id="timeline" class="timeline-section">

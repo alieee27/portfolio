@@ -6,8 +6,9 @@
   <title>Achmad Gozali | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Tambah AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -148,47 +149,48 @@
   </section>
 
   <!-- Contact -->
-<section id="contact" class="contact-section">
-  <h2>Contact Me</h2>
-  <p>Isi form di bawah ini untuk menghubungi saya secara langsung.</p>
+  <section id="contact" class="contact-section" data-aos="fade-up">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <p data-aos="fade-up">Isi form di bawah ini untuk menghubungi saya secara langsung.</p>
 
-  <form action="https://formsubmit.co/achmadgozali833@gmail.com" method="POST" class="contact-form">
-  <input type="text" name="name" placeholder="Nama" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" rows="5" placeholder="Pesan" required></textarea>
+  <form action="https://formsubmit.co/achmadgozali833@gmail.com" method="POST" class="contact-form" data-aos="zoom-in">
+    <input type="text" name="name" placeholder="Nama" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="5" placeholder="Pesan" required></textarea>
 
-  <!-- Redirect ke halaman terima kasih -->
-  <input type="hidden" name="_next" value="https://alieee27.github.io/portfolio/thanks.html">
+    <!-- Optional hidden fields -->
+    <input type="hidden" name="_next" value="https://alieee27.github.io/portfolio/thanks.html">
+    <input type="hidden" name="_captcha" value="false">
+    
+    <button type="submit">Kirim Pesan</button>
+  </form>
 
-  <button type="submit">Kirim Pesan</button>
-</form>
 
-
-  <!-- WhatsApp -->
-  <div class="alt-contact">
-    <p>Atau hubungi saya via WhatsApp:</p>
-    <a href="https://wa.me/6282249244647" target="_blank" class="wa-link">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      <span>+62 822 4924 4647</span>
-    </a>
-  </div>
-</section>
-
+    <!-- Bagian WhatsApp -->
+    <div class="alt-contact" style="text-align: center; margin-top: 30px;">
+      <p>Atau hubungi saya via WhatsApp:</p>
+      <a href="https://wa.me/6282249244647" target="_blank" class="wa-link" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 24px;" />
+        <span>+62 822 4924 4647</span>
+      </a>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Achmad Gozali. All rights reserved.</p>
   </footer>
 
-  <!-- Tambah AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-       easing: 'ease-in-out', // animasi lebih halus
-      once: true
-    });
-  </script>
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true
+  });
+</script>
+
   
 <script>
   const filterButtons = document.querySelectorAll('[data-filter]');

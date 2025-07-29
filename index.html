@@ -10,6 +10,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="top-banner" id="topBanner">
+      🚧 This portfolio is still under development — some features may not be
+      working properly yet. Stay tuned for updates 🚧
+      <span class="close-banner" onclick="closeBanner()">✖</span>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar" data-aos="fade-down">
       <a href="#about">About</a>
@@ -90,31 +96,40 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="projects">
-      <h2 data-aos="fade-up">Projects</h2>
+<section id="projects" class="projects">
+  <h2 data-aos="fade-up">Projects</h2>
 
-      <!-- Tombol Filter -->
-      <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
-        <button data-filter="all">Semua</button>
-        <button data-filter="flutter">App Mobile</button>
-        <button data-filter="web">Web</button>
+  <!-- Tombol Filter -->
+  <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
+    <button data-filter="all">Semua</button>
+    <button data-filter="flutter">App Mobile</button>
+    <button data-filter="web">Web</button>
+  </div>
+
+  <!-- Daftar Project -->
+  <div class="project-grid">
+    <div class="card flutter" data-aos="zoom-in">
+      <img src="app mobile.jpg" alt="Project 1" />
+      <h3>App My Profile</h3>
+      <p>A Flutter-based personal profile app.</p>
+      <div class="project-links">
+        <a href="https://alieee27.github.io/myprofile/" target="_blank">🔗 GitHub</a>
+        <a href="https://github.com/alieee27/myprofile" target="_blank">📂 Source Code</a>
       </div>
+    </div>
 
-      <!-- Daftar Project -->
-      <div class="project-grid">
-        <div class="card flutter" data-aos="zoom-in">
-          <img src="app mobile.jpg" alt="Project 1" />
-          <h3>App My profile</h3>
-          <p>Flutter weather application using OpenWeather API...</p>
-        </div>
-
-        <div class="card web" data-aos="zoom-in" data-aos-delay="100">
-          <img src="web kenangan.jpg" alt="Project 2" />
-          <h3>Web Kenangan</h3>
-          <p>Simple, clean, and responsive portfolio website...</p>
-        </div>
+    <div class="card web" data-aos="zoom-in" data-aos-delay="100">
+      <img src="web kenangan.jpg" alt="Project 2" />
+      <h3>Web Kenangan</h3>
+      <p>Simple, colorful website for storing photo memories.</p>
+      <div class="project-links">
+        <a href="https://alieee27.github.io/kenangan-albi/" target="_blank">🔗 GitHub</a>
+        <a href="https://github.com/alieee27/kenangan-albi" target="_blank">📂 Source Code</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <!-- Timeline -->
     <section id="timeline" class="timeline-section">
@@ -252,6 +267,12 @@
           });
         });
       });
+    </script>
+
+    <script>
+      function closeBanner() {
+        document.getElementById("topBanner").style.display = "none";
+      }
     </script>
   </body>
 </html>

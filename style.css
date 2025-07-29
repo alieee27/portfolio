@@ -319,3 +319,46 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
+
+.top-banner {
+  background-color: #ffefc5;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.close-banner {
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  float: right;
+}
+
+.project-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: white;
+  background-color: #302e2d;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #e64a19;
+  transform: scale(1.05);
+}

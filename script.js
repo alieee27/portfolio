@@ -2,8 +2,6 @@
 // Contoh: Notifikasi klik, Dark Mode toggle, dsb
 console.log("Portfolio loaded!");
 
-console.log("Portfolio loaded!");
-
 // Fitur notifikasi setelah kirim form
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");

@@ -1,3 +1,4 @@
+/* RESET & GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +16,7 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -39,6 +40,7 @@ body {
   color: #1e40af;
 }
 
+/* HEADER */
 header {
   background: #0f172a;
   color: white;
@@ -83,7 +85,7 @@ header p {
   margin: 0 auto;
 }
 
-
+/* SECTION UMUM */
 section {
   padding: 3rem 1rem;
   max-width: 900px;
@@ -102,6 +104,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* SKILLS SECTION */
 .skills-icons {
   padding: 60px 20px;
   text-align: center;
@@ -116,11 +119,10 @@ h2 {
 }
 
 .skills-icons h3 {
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
   margin-top: 40px;
   margin-bottom: 15px;
-  color: #38bdf8; /* warna biru cerah */
-  text-transform: none;
+  color: #38bdf8;
   border-bottom: 2px solid #0ea5e9;
   display: inline-block;
   padding-bottom: 5px;
@@ -137,33 +139,42 @@ h2 {
 .icon-card {
   background: #1e293b;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.678);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+  cursor: pointer;
 }
 
 .icon-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 183, 255, 0.607);
+  transform: rotateX(10deg) rotateY(-10deg) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6);
 }
 
 .icon-card img {
   width: 48px;
   height: 48px;
+  transition: transform 0.3s ease;
 }
 
-.icon-card p {
-  margin-top: 10px;
-  font-size: 0.9rem;
+.icon-card:hover img {
+  transform: scale(1.1) rotateZ(5deg);
 }
 
+.icon-card:nth-child(1) { transition-delay: 0s; }
+.icon-card:nth-child(2) { transition-delay: 0.1s; }
+.icon-card:nth-child(3) { transition-delay: 0.2s; }
+.icon-card:nth-child(4) { transition-delay: 0.3s; }
+.icon-card:nth-child(5) { transition-delay: 0.4s; }
 
-/* SECTION PROJECTS */
+/* PROJECTS */
 .projects {
   padding: 4rem 1rem;
-  background: none;
-  color: #1e293b;
   text-align: center;
+  color: #1e293b;
 }
 
 .projects h2 {
@@ -183,24 +194,21 @@ h2 {
 }
 
 .filter-buttons button {
-  background: #fff;
-  color: #0f172a;
-  border: 2px solid #0f172a;
   padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  border: none;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
-.filter-buttons button:hover,
-.filter-buttons button.active {
-  background-color: #0f172a;
-  color: #fff;
+.filter-buttons button:hover {
+  background-color: #dc2626;
 }
 
-/* PROJECT GRID - SWIPEABLE */
+/* PROJECT GRID */
 .project-grid {
   display: flex;
   gap: 1.5rem;
@@ -211,22 +219,12 @@ h2 {
   scrollbar-width: none;
 }
 
-.project-grid {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-
 /* CARD PROJECT */
 .card {
   flex: 0 0 280px;
   scroll-snap-align: start;
   background: linear-gradient(145deg, #f0f4ff, #ffffff);
   border-radius: 16px;
-  box-shadow: none; /* Hapus shadow default */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -234,10 +232,9 @@ h2 {
 }
 
 .card:hover {
-  transform: scale(1.02); /* Lebih elegan daripada shadow */
-  background: linear-gradient(145deg, #e0edff, #ffffff); /* Efek lembut */
+  transform: scale(1.02);
+  background: linear-gradient(145deg, #e0edff, #ffffff);
 }
-
 
 .card img {
   width: 100%;
@@ -245,7 +242,6 @@ h2 {
   object-fit: cover;
 }
 
-/* CARD CONTENT */
 .card h3 {
   font-size: 1.2rem;
   font-weight: 600;
@@ -264,63 +260,27 @@ h2 {
 /* PROJECT LINKS */
 .project-links {
   display: flex;
-  justify-content: space-between;
-  padding: 0.8rem 1rem;
-  border-top: 1px solid #e2e8f0;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .project-links a {
-  font-size: 0.9rem;
   text-decoration: none;
-  font-weight: 600;
+  color: white;
+  background-color: #5c5655;
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
   transition: 0.3s ease;
-  background-color: #0f172a;
-  color: #fff;
 }
 
 .project-links a:hover {
-  background-color: #facc15;
-  color: #0f172a;
+  background-color: #e64a19;
   transform: scale(1.05);
 }
 
-
-.contact a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #0f172a;
-  background: #e2e8f0;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: 0.3s ease;
-}
-
-.contact a:hover {
-  background: #0f172a;
-  color: white;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-  background-color: #1e1e1e;
-  font-size: 14px;
-}
-
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  .skills ul {
-    flex-direction: column;
-  }
-}
-
+/* TIMELINE */
 .timeline-section {
   padding: 4rem 1rem;
 }
@@ -407,29 +367,7 @@ footer {
   color: #334155;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .timeline-container::before {
-    left: 8px; /* pindah garis ke kiri */
-  }
-
-  .timeline-item,
-  .timeline-item:nth-child(even) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .timeline-content {
-    width: 100%;
-    margin-left: 2rem;
-  }
-
-  .timeline-dot {
-    left: 0;
-    transform: translateX(0);
-  }
-}
-
+/* CONTACT SECTION */
 .contact-section {
   background: #fafafa;
   padding: 50px 20px;
@@ -498,6 +436,16 @@ footer {
   height: 20px;
 }
 
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  background-color: #1e1e1e;
+  font-size: 14px;
+}
+
+/* STATS SECTION */
 .stats-pro {
   display: flex;
   justify-content: center;
@@ -540,26 +488,7 @@ footer {
   color: #475569;
 }
 
-.filter-buttons {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.filter-buttons button {
-  margin: 0.5rem;
-  padding: 0.5rem 1.2rem;
-  border: none;
-  background-color: #ef4444;
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.filter-buttons button:hover {
-  background-color: #dc2626;
-}
-
-
+/* TOP BANNER */
 .top-banner {
   background-color: #ffefc5;
   color: #333;
@@ -581,33 +510,7 @@ footer {
   float: right;
 }
 
-.project-links {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.project-links a {
-  text-decoration: none;
-  color: white;
-  background-color: #5c5655;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  transition: 0.3s ease;
-}
-
-.project-links a:hover {
-  background-color: #e64a19;
-  transform: scale(1.05);
-}
-
-.skills-section h2 {
-  position: relative;
-  top: -25px; /* Naikkan 10px ke atas */
-}
-
+/* SCROLL TO TOP BUTTON */
 #scrollToTopBtn {
   position: fixed;
   bottom: 40px;
@@ -636,36 +539,35 @@ footer {
   visibility: visible;
 }
 
-.icon-card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  will-change: transform;
-  cursor: pointer;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 8px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .timeline-content {
+    width: 100%;
+    margin-left: 2rem;
+  }
+
+  .timeline-dot {
+    left: 0;
+    transform: translateX(0);
+  }
 }
 
-.icon-card:hover {
-  transform: rotateX(10deg) rotateY(-10deg) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6);
-}
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
 
-.icon-card img {
-  width: 48px;
-  height: 48px;
-  transition: transform 0.3s ease;
+  .skills ul {
+    flex-direction: column;
+  }
 }
-
-.icon-card:hover img {
-  transform: scale(1.1) rotateZ(5deg);
-}
-
-.icon-card:nth-child(1) { transition-delay: 0s; }
-.icon-card:nth-child(2) { transition-delay: 0.1s; }
-.icon-card:nth-child(3) { transition-delay: 0.2s; }
-.icon-card:nth-child(4) { transition-delay: 0.3s; }
-.icon-card:nth-child(5) { transition-delay: 0.4s; }

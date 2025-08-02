@@ -341,6 +341,7 @@
     <footer data-aos="fade-up">
       <p>© 2025 Achmad Gozali. All rights reserved.</p>
       <p>Developed using HTML, CSS, JavaScript — still a work in progress.</p>
+      <p id="last-updated"></p>
     </footer>
 
     <!-- AOS JS -->
@@ -440,6 +441,11 @@
       behavior: "smooth",
     });
   });
+
+  const lastModified = new Date(document.lastModified);
+    document.getElementById("last-updated").textContent =
+  "Last updated: " + lastModified.toLocaleDateString();
+
 </script>
 </body>
 </html>

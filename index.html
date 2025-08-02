@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Achmad Gozali | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio Achmad Gozali - Mobile Developer & Web Developer">
+    <meta name="keywords" content="portfolio, flutter, web developer, achmad gozali">
+    <meta name="author" content="Achmad Gozali">
+
+    <!-- Open Graph (untuk media sosial) -->
+    <meta property="og:title" content="Achmad Gozali | Portfolio">
+    <meta property="og:description" content="Portfolio resmi Achmad Gozali - Mobile & Web Developer dengan keahlian Flutter dan pengembangan website modern.">
+    <meta property="og:image" content="thumbnail.jpg">
+    <meta property="og:url" content="https://alieee27.github.io/portfolio/">
+    <meta property="og:type" content="website">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -16,6 +27,10 @@
   />
   </head>
   <body>
+      <button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
     <div class="simple-bg"></div>
     <div class="top-banner" id="topBanner">
       🚧 This portfolio is still under development — 
@@ -188,7 +203,7 @@
       <!-- Daftar Project -->
       <div class="project-grid">
         <div class="card flutter" data-aos="zoom-in">
-          <img src="app profile.jpg" alt="Project 1" />
+          <img src="app profile.jpg" alt="Project 1" loading="lazy" />
             <h3>App My Profie</h3>
             <p>A clean and responsive personal profile app built with Flutter, showcasing skills, projects, and contact info.</p>
             <div class="project-links">
@@ -202,7 +217,7 @@
         </div>
 
         <div class="card web" data-aos="zoom-in" data-aos-delay="100">
-          <img src="cuaca.jpg" alt="Project 2" />
+          <img src="cuaca.jpg" alt="Project 2" loading="lazy" />
           <h3>Web Cuaca</h3>
           <p>colorful and responsive weather website that displays real-time weather updates based on location.</p>
           <div class="project-links">
@@ -338,22 +353,27 @@
     </script>
 
     <script>
-      const filterButtons = document.querySelectorAll("[data-filter]");
-      const cards = document.querySelectorAll(".project-grid .card");
+  const filterButtons = document.querySelectorAll("[data-filter]");
+  const cards = document.querySelectorAll(".project-grid .card");
 
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const filter = button.getAttribute("data-filter");
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Hapus 'active' dari semua tombol
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Tambahkan 'active' ke tombol yang diklik
+              button.classList.add("active");
 
-          cards.forEach((card) => {
-            if (filter === "all" || card.classList.contains(filter)) {
-              card.style.display = "block";
+    const filter = button.getAttribute("data-filter");
+    cards.forEach((card) => {
+        if (filter === "all" || card.classList.contains(filter)) {
+          card.style.display = "block";
             } else {
               card.style.display = "none";
             }
           });
         });
       });
+
     </script>
 
     <script>
@@ -380,6 +400,52 @@
       card.style.transform = `rotateX(0) rotateY(0) scale(1)`;
     });
   });
+
+  const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".navbar a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+    const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 </script>
+<!-- Visitor Counter -->
+<div style="text-align: center; margin-top: 30px;">
+  <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=5&type=page&initCount=0"
+    alt="visitor counter" style="border: none;" />
+  <p style="font-size: 14px; color: #666;">👁️ Pengunjung Website</p>
+</div>
+
 </body>
 </html>

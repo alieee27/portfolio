@@ -759,3 +759,51 @@ footer {
     flex-direction: column;
   }
 }
+
+.testimoni-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimoni-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.testimoni-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.testimoni-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.testimoni-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimoni-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: gold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.testimoni-card h4 {
+    font-weight: 600;
+    margin-top: 10px;
+}
